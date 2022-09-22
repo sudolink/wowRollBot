@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
 dotenv.config()
-import {Client, bold, italic, GatewayIntentBits} from "discord.js";
+import {Client, codeBlock,bold, italic, GatewayIntentBits} from "discord.js";
 
-const HELP_MSG = "\nYou can use RollBot by typing \n/roll (1-100)\n/roll 103(1-103)\n/roll 1-300(specifying a range).\n Minimum is 1 and maximum is 1000000, like in-game."
+const HELP_MSG = "\nYou can use RollBot by typing \n/roll\t\t\t  (rolls 1-100)\n/roll 103\t\t  (rolls 1-103)\n/roll 3-300\t\t(rolls specified range).\nMinimum is 1 and maximum is 1000000, like in-game."
 
 const client = new Client({
     intents: [
@@ -30,7 +30,7 @@ client.on("messageCreate", async(message) => {
                     message.channel.send(italic(`${message.author} rolled ${rolled} (${1}-${100})`));
                 }else if(msgSplice.length == 2){//args present, user most likely specified roll range, perform validity checks of arguments
                     if (msgSplice[1] === "help"){
-                        message.channel.send(`${message.author}: ${HELP_MSG}`)
+                        message.channel.send(codeBlock(`${HELP_MSG}`))
                     } else {
                         const rollSplit = msgSplice[1].split("-"); //split the arguments after /roll command
                         // console.log(rollSplit);
