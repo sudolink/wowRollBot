@@ -1,4 +1,4 @@
-# wowRollBot
+# WoWRollBot (for Discord)
 A discord bot bringing /roll functionality from World of Warcraft to your discord server.
 It doesnt full utilize all the functionality that Discord gives to bots (like slash commands), it scans text messages on channels and ignores anything that doesn't start with /roll. In that manner, it is very primitive and perhaps stupidly designed. I think discord allows for /commands to invoke a bot, this doesn't do that. I did this in a couple of hours wanting to quickly write it up, and didn't want to read tons of documentation.
 
