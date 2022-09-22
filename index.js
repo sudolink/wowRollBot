@@ -21,7 +21,7 @@ function roll(start=1,end=100){
 }
 
 client.on("messageCreate", async(message) => {
-    if(!message?.author.bot) {
+    if(!message.author.bot) {
         if(message.content.includes("/roll")){
             const msgSplice = message.content.split(" ");
             if(msgSplice[0] == "/roll"){ //if /roll is first in message string, then check if there are trailing arguments
